@@ -132,9 +132,7 @@
      padding: 20px;
      --tw-bg-opacity: 1;
      background-color: rgb(247 247 252 / var(--tw-bg-opacity, 1));
-
      height: 100%;
-     /* overflow: auto; */
  }
 
  .collapsed+.content {
