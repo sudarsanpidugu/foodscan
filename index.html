@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fixed Navbar with Sidebar</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+            <!-- Sidebar Toggle Button -->
+            <button class="btn btn-primary me-3" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <a class="navbar-brand fw-bold" href="#">FoodScan</a>
+
+            <div class="d-flex ms-auto align-items-center">
+                <button class="btn btn-light me-2">
+                    <i class="fas fa-store"></i> Mirpur-1 (Main)
+                </button>
+
+                <button class="btn btn-outline-primary me-2">
+                    <i class="fas fa-globe"></i> English
+                </button>
+
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="profileDropdown"
+                        data-bs-toggle="dropdown">
+                        <i class="fas fa-user"></i> Sudarsan
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
+                        <li class="text-center">
+                            <img src="https://via.placeholder.com/60" alt="User Profile">
+                            <h6>Sudarsan</h6>
+                            <p>sudarasn2165@gmail.com<br>+91 8464002165</p>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user-edit me-2"></i> Edit Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-key me-2"></i> Change Password</a></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>
+                                Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+            <li><a href="#"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
+            <li><a href="#"><i class="fas fa-table"></i> <span>Dining Tables</span></a></li>
+
+            <li class="sidebar-heading">POS & ORDERS</li>
+            <li><a href="#"><i class="fas fa-desktop"></i> <span>POS</span></a></li>
+            <li><a href="#"><i class="fas fa-receipt"></i> <span>POS Orders</span></a></li>
+            <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Table Orders</span></a></li>
+
+            <li class="sidebar-heading">PROMO</li>
+            <li><a href="#"><i class="fas fa-tags"></i> <span>Offers</span></a></li>
+
+            <li class="sidebar-heading">USERS</li>
+            <li><a href="#"><i class="fas fa-user-shield"></i> <span>Administrators</span></a></li>
+            <li><a href="#"><i class="fas fa-users"></i> <span>Customers</span></a></li>
+            <li><a href="#"><i class="fas fa-user-tie"></i> <span>Employees</span></a></li>
+
+            <li class="sidebar-heading">ACCOUNTS</li>
+            <li><a href="#"><i class="fas fa-wallet"></i> <span>Transactions</span></a></li>
+
+            <li class="sidebar-heading">REPORTS</li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> <span>Sales Report</span></a></li>
+            <li><a href="#"><i class="fas fa-box"></i> <span>Items Report</span></a></li>
+            <li><a href="#"><i class="fas fa-credit-card"></i> <span>Credit Balance Report</span></a></li>
+
+            <li class="sidebar-heading">SETUP</li>
+            <li><a href="#"><i class="fas fa-cogs"></i> <span>Settings</span></a></li>
+        </ul>
+    </div>
+
+
+    <div class="content" id="Dashboard">
+        <div class="remider">
+            <h5>Remider!</h5>
+            <span>Dummy data will be reset in every 30 minutes.</span>
+        </div>
+        <div class="message py-3">
+            <h4>Good Morning!</h4>
+            <h5>Sudarsan.</h5>
+        </div>
+
+        <div class="section1">
+            <div class="card sales">
+                <i class="bi bi-currency-dollar"></i>
+                <div class="card-content">
+                    <div>Total Sales</div>
+                    <div>$62.96</div>
+                </div>
+            </div>
+            <div class="card orders">
+                <i class="bi bi-box-fill"></i>
+                <div class="card-content">
+                    <div>Total Orders</div>
+                    <div>1</div>
+                </div>
+            </div>
+            <div class="card customers">
+                <i class="bi bi-people-fill"></i>
+                <div class="card-content">
+                    <div>Total Customers</div>
+                    <div>2</div>
+                </div>
+            </div>
+            <div class="card menu-items">
+                <i class="bi bi-file-earmark-post"></i>
+                <div class="card-content">
+                    <div>Total Menu Items</div>
+                    <div>55</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph d-flex justify-content-between mt-5">
+            <div class="sales-summary-container">
+                <div class="sales-header">
+                    <div class="sales-text">
+                        <h5 class="mb-1">Sales Summary</h5>
+                    </div>
+
+                    <div class="date-picker-container">
+                        <input type="text" class="form-control" placeholder="Select Date">
+                        <i class="fas fa-calendar-alt calendar-icon"></i>
+                    </div>
+                </div>
+
+                <div class="graph-container">
+                    <div class="graph-placeholder"></div>
+                </div>
+            </div>
+
+            <div class="sales-summary-container">
+                <div class="sales-header">
+                    <div class="sales-text">
+                        <h5 class="mb-1">Order Stats</h5>
+                    </div>
+
+                    <div class="date-picker-container">
+                        <input type="text" class="form-control" placeholder="Select Date">
+                        <i class="fas fa-calendar-alt calendar-icon"></i>
+                    </div>
+                </div>
+
+                <div class="graph-container">
+                    <div class="graph-placeholder"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph d-flex justify-content-between mt-5">
+            <div class="sales-summary-container">
+                <div class="sales-header">
+                    <div class="sales-text">
+                        <h5 class="mb-1">Featured Items</h5>
+                    </div>
+                </div>
+
+                <div class="featured-items ">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="item-card">
+                                <img src="/assets/images/espresso-thumb.png" alt="Espresso">
+                                <p>Espresso</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-card">
+                                <img src="/assets/images/espresso-thumb.png" alt="Egg Roll">
+                                <p>Egg Roll</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-card">
+                                <img src="/assets/images/espresso-thumb.png" alt="Whopper">
+                                <p>Whopper</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-card">
+                                <img src="/assets/images/espresso-thumb.png" alt="BBQ Pulled Pork">
+                                <p>BBQ Pulled Pork</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-card">
+                                <img src="/assets/images/espresso-thumb.png" alt="Bacon Double Cheeseburger">
+                                <p>Bacon Double Cheeseburger</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-card">
+                                <img src="/assets/images/espresso-thumb.png" alt="Szechuan Shrimp">
+                                <p>Szechuan Shrimp</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-card">
+                                <img src="/assets/images/espresso-thumb.png" alt="Chicken Noodles Soup">
+                                <p>Chicken Noodles Soup</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-card">
+                                <img src="/assets/images/espresso-thumb.png" alt="French Fries">
+                                <p>French Fries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sales-summary-container">
+                <div class="sales-header">
+                    <div class="sales-text">
+                        <h5 class="mb-1">Most Popular Items</h5>
+                    </div>
+                </div>
+
+                <div class="popular-items p-3">
+                    <h4>Most Popular Items</h4>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="item-card">
+                                <img src="/assets/images/mojito-thumb.png" alt="Baked Potato">
+                                <div class="item-details">
+                                    <div class="item-title">Baked Potato</div>
+                                    <a href="#" class="item-category">Side Orders</a>
+                                    <div class="item-price">$1.50</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item-card">
+                                <img src="/assets/images/mojito-thumb.png" alt="Baked Potato">
+                                <div class="item-details">
+                                    <div class="item-title">Baked Potato</div>
+                                    <a href="#" class="item-category">Side Orders</a>
+                                    <div class="item-price">$1.50</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item-card">
+                                <img src="/assets/images/mojito-thumb.png" alt="Baked Potato">
+                                <div class="item-details">
+                                    <div class="item-title">Baked Potato</div>
+                                    <a href="#" class="item-category">Side Orders</a>
+                                    <div class="item-price">$1.50</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item-card">
+                                <img src="/assets/images/mojito-thumb.png" alt="French Fries">
+                                <div class="item-details">
+                                    <div class="item-title">French Fries</div>
+                                    <a href="#" class="item-category">Side Orders</a>
+                                    <div class="item-price">$1.00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item-card">
+                                <img src="/assets/images/mojito-thumb.png" alt="Homemade Mashed Potato">
+                                <div class="item-details">
+                                    <div class="item-title">Homemade Mashed Potato</div>
+                                    <a href="#" class="item-category">Side Orders</a>
+                                    <div class="item-price">$1.50</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item-card">
+                                <img src="/assets/images/mojito-thumb.png" alt="Cappuccino">
+                                <div class="item-details">
+                                    <div class="item-title">Cappuccino</div>
+                                    <a href="#" class="item-category">Beverages</a>
+                                    <div class="item-price">$1.50</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.getElementById("sidebar");
+            const content = document.getElementById("content");
+            const toggleButton = document.getElementById("toggleSidebar");
+            const icon = toggleButton.querySelector("i");
+
+            // Load sidebar state from local storage
+            if (localStorage.getItem("sidebar-collapsed") === "true") {
+                sidebar.classList.add("collapsed");
+                content.classList.add("collapsed");
+                icon.classList.add("rotate");
+            }
+
+            toggleButton.addEventListener("click", function () {
+                sidebar.classList.toggle("collapsed");
+                content.classList.toggle("collapsed");
+
+                icon.classList.toggle("rotate");
+
+                localStorage.setItem("sidebar-collapsed", sidebar.classList.contains("collapsed"));
+            });
+
+            const links = document.querySelectorAll(".sidebar ul li a");
+
+            links.forEach(link => {
+                link.addEventListener("click", function () {
+                    links.forEach(l => l.classList.remove("active")); // Remove active from all links
+                    this.classList.add("active"); // Add active class to clicked link
+
+                    // Save active link in local storage
+                    localStorage.setItem("activeLink", this.getAttribute("href"));
+                });
+            });
+
+            // Load Active Link from Storage
+            const activeLink = localStorage.getItem("activeLink");
+            if (activeLink) {
+                const currentActive = document.querySelector(`.sidebar ul li a[href="${activeLink}"]`);
+                if (currentActive) {
+                    currentActive.classList.add("active");
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
