@@ -44,11 +44,11 @@
                 <div class="dropdown">
                     <button class="btn btn-light dropdown-toggle" type="button" id="profileDropdown"
                         data-bs-toggle="dropdown">
-                        <i class="fas fa-user"></i> Sudarsan
+                        <img src="/assets/images/profile.png" width="35px" class="rounded me-2" alt=""> Sudarsan
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
                         <li class="text-center">
-                            <img src="https://via.placeholder.com/60" alt="User Profile">
+                            <img src="/assets/images/profile.png" alt="User Profile">
                             <h6>Sudarsan</h6>
                             <p>sudarasn2165@gmail.com<br>+91 8464002165</p>
                         </li>
@@ -68,8 +68,8 @@
 
     <div class="sidebar" id="sidebar">
         <ul>
-            <li><a href="#"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
-            <li><a href="#"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
+            <li><a href="#Dashboard"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+            <li><a href="/items.html"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
             <li><a href="#"><i class="fas fa-table"></i> <span>Dining Tables</span></a></li>
 
             <li class="sidebar-heading">POS & ORDERS</li>
@@ -99,7 +99,7 @@
     </div>
 
 
-    <div class="content" id="Dashboard">
+    <section class="content" id="Dashboard">
         <div class="remider">
             <h5>Remider!</h5>
             <span>Dummy data will be reset in every 30 minutes.</span>
@@ -116,43 +116,31 @@
             </div>
         </div>
 
-        <div class="overview-card">
-                <div class=" col-md-3 total sales d-flex align-items-center">
-                    <div class="icon">
-                        <i class="bi bi-currency-dollar"></i>
-                    </div>
-                        <h5>Total Sales</h5>
-                </div>
-        </div>
-        <div class="section1">
 
-            <div class="cards">
-                <i class="bi bi-currency-dollar"></i>
-                <div class="card-content">
-                    <div>Total Sales</div>
-                    <div>$62.96</div>
+        <div class="section1">
+            <div class="cards sales">
+                <div class="icon">
+                    <i class="bi bi-currency-dollar"></i>
                 </div>
+                <div>Total Sales</div>
             </div>
-            <div class="card orders">
-                <i class="bi bi-box-fill"></i>
-                <div class="card-content">
-                    <div>Total Orders</div>
-                    <div>1</div>
+            <div class="cards orders">
+                <div class="icon">
+                    <i class="bi bi-box-fill"></i>
                 </div>
+                <div>Total Orders</div>
             </div>
-            <div class="card customers">
-                <i class="bi bi-people-fill"></i>
-                <div class="card-content">
-                    <div>Total Customers</div>
-                    <div>2</div>
+            <div class="cards customers">
+                <div class="icon">
+                    <i class="bi bi-people-fill"></i>
                 </div>
+                <div>Total Customers</div>
             </div>
-            <div class="card menu-items">
-                <i class="bi bi-file-earmark-post"></i>
-                <div class="card-content">
-                    <div>Total Menu Items</div>
-                    <div>55</div>
+            <div class="cards menu-items">
+                <div class="icon">
+                    <i class="bi bi-file-earmark-post"></i>
                 </div>
+                <div>Total Menu Items</div>
             </div>
         </div>
 
@@ -328,47 +316,60 @@
                 </div>
             </div>
         </div>
+    </section>
 
+</body>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar"),
+            content = document.getElementById("content"),
+            toggleButton = document.getElementById("toggleSidebar"),
+            icon = toggleButton.querySelector("i"),
+            links = document.querySelectorAll(".sidebar ul li a");
 
-    </div>
+        // Load sidebar state
+        if (localStorage.getItem("sidebar-collapsed") === "true") {
+            sidebar.classList.add("collapsed");
+            content.classList.add("collapsed");
+            icon.classList.add("rotate");
+        }
 
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+            content.classList.toggle("collapsed");
+            icon.classList.toggle("rotate");
+            localStorage.setItem("sidebar-collapsed", sidebar.classList.contains("collapsed"));
+        });
 
-    <!-- Custom JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sidebar = document.getElementById("sidebar");
-            const content = document.getElementById("content");
-            const toggleButton = document.getElementById("toggleSidebar");
-            const icon = toggleButton.querySelector("i");
+        // Active link management
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                links.forEach(l => l.classList.remove("active"));
+                link.classList.add("active");
+                localStorage.setItem("activeLink", link.getAttribute("href"));
+            });
+        });
+    });
+</script>
 
-            // Load sidebar state from local storage
-            if (localStorage.getItem("sidebar-collapsed") === "true") {
-                sidebar.classList.add("collapsed");
-                content.classList.add("collapsed");
-                icon.classList.add("rotate");
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let path = window.location.pathname; // Get the URL path
+        let parts = path.split('/').filter(part => part); // Split and remove empty parts
+        let breadcrumbHtml = 'Dashboard'; // Default first part
+
+        parts.forEach((part, index) => {
+            let formattedPart = part.charAt(0).toUpperCase() + part.slice(1); // Capitalize first letter
+            if (index === parts.length - 1) {
+                breadcrumbHtml += ` / <span class="text-primary">${formattedPart}</span>`; // Highlight last part
+            } else {
+                breadcrumbHtml += ` / ${formattedPart}`;
             }
+        });
 
-            toggleButton.addEventListener("click", function () {
-                sidebar.classList.toggle("collapsed");
-                content.classList.toggle("collapsed");
+        document.getElementById("breadcrumb").innerHTML = breadcrumbHtml;
+    });
+</script>
 
-                icon.classList.toggle("rotate");
-
-                localStorage.setItem("sidebar-collapsed", sidebar.classList.contains("collapsed"));
-            });
-
-            const links = document.querySelectorAll(".sidebar ul li a");
-
-            links.forEach(link => {
-                link.addEventListener("click", function () {
-                    links.forEach(l => l.classList.remove("active")); // Remove active from all links
-                    this.classList.add("active"); // Add active class to clicked link
-
-                    // Save active link in local storage
-                    localStorage.setItem("activeLink", this.getAttribute("href"));
-                });
-            });
-
-        // Load Active Link from Storage
-    
+</html>
