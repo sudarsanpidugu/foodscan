@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0F3D5F, #1A5276);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .registration-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            backdrop-filter: blur(10px);
+        }
+        .registration-container h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .icon-container {
+            margin-bottom: 20px;
+        }
+        .icon-container img {
+            width: 80px;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .input-group input:focus {
+            outline: none;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+        .input-group span {
+            color: #fff;
+            font-size: 18px;
+        }
+        .register-btn {
+            background-color: #1B4F72;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+        .register-btn:hover {
+            background-color: #154360;
+            transform: scale(1.05);
+        }
+        .register-btn:active {
+            background-color: #0E2F44;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Member Registration</h2>
+        <div class="icon-container">
+            <img src="https://img.icons8.com/ios/100/ffffff/add-user-male.png" alt="User Icon">
+        </div>
+        <div class="input-group">
+            <span>&#128100;</span>
+            <input type="text" placeholder="Full Name">
+        </div>
+        <div class="input-group">
+            <span>&#128222;</span>
+            <input type="tel" placeholder="Mobile Number">
+        </div>
+        <div class="input-group">
+            <span>&#128231;</span>
+            <input type="email" placeholder="Email">
+        </div>
+        <div class="input-group">
+            <span>&#128274;</span>
+            <input type="password" placeholder="Password">
+        </div>
+        <div class="input-group">
+            <span>&#128274;</span>
+            <input type="password" placeholder="Confirm Password">
+        </div>
+        <button class="register-btn">REGISTER</button>
+    </div>
+</body>
+</html>
