@@ -70,8 +70,8 @@
 
     <div class="sidebar" id="sidebar">
         <ul>
-            <li><a href="#Dashboard"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
-            <li><a href="#"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
+            <li><a href="/index.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+            <li><a href="/items.html"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
             <li><a href="#"><i class="fas fa-table"></i> <span>Dining Tables</span></a></li>
 
             <li class="sidebar-heading">POS & ORDERS</li>
@@ -322,18 +322,18 @@
                         <td>$1.50</td>
                         <td><span class="status">Active</span></td>
                         <td class="actions">
-                            <span class="tooltip-container">
+                            <a href="/view.html" class="tooltip-container">
                                 <i class="fas fa-eye view"></i>
                                 <span class="tooltip-text">View</span>
-                            </span>
-                            <span class="tooltip-container">
+                            </a>
+                            <a class="tooltip-container">
                                 <i class="fas fa-edit edit"></i>
                                 <span class="tooltip-text">Edit</span>
-                            </span>
-                            <span class="tooltip-container">
+                            </a>
+                            <a class="tooltip-container">
                                 <i class="fas fa-trash delete"></i>
                                 <span class="tooltip-text">Delete</span>
-                            </span>
+                            </a>
                         </td>
 
                     </tr>
@@ -344,18 +344,18 @@
                         <td>$1.50</td>
                         <td><span class="status">Active</span></td>
                         <td class="actions">
-                            <span class="tooltip-container">
+                            <a href="/view.html" class="tooltip-container">
                                 <i class="fas fa-eye view"></i>
                                 <span class="tooltip-text">View</span>
-                            </span>
-                            <span class="tooltip-container">
+                            </a>
+                            <a class="tooltip-container">
                                 <i class="fas fa-edit edit"></i>
                                 <span class="tooltip-text">Edit</span>
-                            </span>
-                            <span class="tooltip-container">
+                            </a>
+                            <a class="tooltip-container">
                                 <i class="fas fa-trash delete"></i>
                                 <span class="tooltip-text">Delete</span>
-                            </span>
+                            </a>
                         </td>
                     </tr>
 
@@ -365,18 +365,18 @@
                         <td>$1.50</td>
                         <td><span class="status">Active</span></td>
                         <td class="actions">
-                            <span class="tooltip-container">
+                            <a href="/view.html" class="tooltip-container">
                                 <i class="fas fa-eye view"></i>
                                 <span class="tooltip-text">View</span>
-                            </span>
-                            <span class="tooltip-container">
+                            </a>
+                            <a class="tooltip-container">
                                 <i class="fas fa-edit edit"></i>
                                 <span class="tooltip-text">Edit</span>
-                            </span>
-                            <span class="tooltip-container">
+                            </a>
+                            <a class="tooltip-container">
                                 <i class="fas fa-trash delete"></i>
                                 <span class="tooltip-text">Delete</span>
-                            </span>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
@@ -403,70 +403,10 @@
         </div>
     </section>
 
-
-    <section class="view-section">
-        <div class="view-content">
-
-            <ul class="nav nav-tabs" id="myTabs">
-                <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#info"><i class="bi bi-info-circle-fill"></i> Information</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#images"><i class="bi bi-image"></i> Images</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#variation"><i class="bi bi-grid-fill"></i> Variation</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#extra"> <i class="bi bi-link-45deg"></i> Extra</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#addon"><i class="bi bi-puzzle-fill"></i> Addon</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="info">
-                    <div class="info-section">
-                        <div class="info-left">
-                            <p>Name</p>
-                            <p>Category</p>
-                            <p>Type</p>
-                            <p>Status</p>
-                            <p>Caution</p>
-                            <p>Description</p>
-                        </div>
-                        <div class="info-right">
-                            <p>Price</p>
-                            <p>Tax</p>
-                            <p>Featured</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="images">
-                    <div class="image-container">
-                        <img src="slider.png" alt="slider">
-                        <div class="righ">
-                            <p>Size: (262px, 182px)</p>
-                            <button class="btn btn-primary"><i class="bi bi-images"></i> Upload New Image</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="variation">
-                   <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add Variation</a>
-                </div>
-                <div class="tab-pane fade" id="extra">
-                    <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add Extra</a>
-
-                </div>
-                <div class="tab-pane fade" id="addon">
-                    <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add Addon</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
 </body>
 
+
+<!-- ----------------- add items script------------- -->
 <script>
     document.getElementById("openForm").addEventListener("click", function () {
         document.getElementById("formContainer").classList.add("show");
@@ -475,7 +415,10 @@
         document.getElementById("formContainer").classList.remove("show");
     });
 </script>
+<!-- ----------------- add items end------------- -->
 
+
+<!-- ------------------- sidebar collapse ------------` -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const sidebar = document.getElementById("sidebar"),
@@ -509,25 +452,6 @@
     });
 </script>
 
-<!-- --------- navigation -----------/ -->
-<script>
-    function openPage(pageName, elmnt, color) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
-        }
-        document.getElementById(pageName).style.display = "block";
-        elmnt.style.backgroundColor = color;
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-</script>
-
+<!-- ------------------- sidebar collapse ------------` -->
 
 </html>
