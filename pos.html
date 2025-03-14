@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodscan</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+
+
+            <a class="navbar-brand fw-bold px-2" href="#"><img src="/assets/images/logo.png" alt="" width="180px"></a>
+            <a class="btn btn-primary me-3" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </a>
+            <div class="d-flex ms-auto align-items-center">
+
+                <button class="btn btn-light me-2">
+                    <i class="fas fa-store"></i> Mirpur-1 (Main)
+                </button>
+
+                <button class="btn btn-outline-primary me-2">
+                    <i class="fas fa-globe"></i> English
+                </button>
+
+
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="profileDropdown"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/profile.png" width="35px" class="rounded me-2" alt=""> Sudarsan
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
+                        <li class="text-center">
+                            <img src="/assets/images/profile.png" alt="User Profile">
+                            <h6>Sudarsan</h6>
+                            <p>sudarasn2165@gmail.com<br>+91 8464002165</p>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user-edit me-2"></i> Edit Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-key me-2"></i> Change Password</a></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>
+                                Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="/index.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+            <li><a href="/items.html"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
+            <li><a href="#"><i class="fas fa-table"></i> <span>Dining Tables</span></a></li>
+
+            <li class="sidebar-heading">POS & ORDERS</li>
+            <li><a href="/pos.html"><i class="fas fa-desktop"></i> <span>POS</span></a></li>
+            <li><a href="#"><i class="fas fa-receipt"></i> <span>POS Orders</span></a></li>
+            <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Table Orders</span></a></li>
+
+            <li class="sidebar-heading">PROMO</li>
+            <li><a href="#"><i class="fas fa-tags"></i> <span>Offers</span></a></li>
+
+            <li class="sidebar-heading">USERS</li>
+            <li><a href="#"><i class="fas fa-user-shield"></i> <span>Administrators</span></a></li>
+            <li><a href="#"><i class="fas fa-users"></i> <span>Customers</span></a></li>
+            <li><a href="#"><i class="fas fa-user-tie"></i> <span>Employees</span></a></li>
+
+            <li class="sidebar-heading">ACCOUNTS</li>
+            <li><a href="#"><i class="fas fa-wallet"></i> <span>Transactions</span></a></li>
+
+            <li class="sidebar-heading">REPORTS</li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> <span>Sales Report</span></a></li>
+            <li><a href="#"><i class="fas fa-box"></i> <span>Items Report</span></a></li>
+            <li><a href="#"><i class="fas fa-credit-card"></i> <span>Credit Balance Report</span></a></li>
+
+            <li class="sidebar-heading">SETUP</li>
+            <li><a href="#"><i class="fas fa-cogs"></i> <span>Settings</span></a></li>
+        </ul>
+    </div>
+
+    <section class="pos">
+        <div class="pop-content">
+            <div class="pop-left">
+                <div class="search-container">
+                    <input type="text" class="form-control search-input" placeholder="Search by Menu Item">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="menu-container">
+                    <button class="scroll-btn left-arrow" onclick="scrollMenu(-1)">&#10094;</button>
+                    <div class="menu-items" id="menu">
+                        <div class="menu-item active" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="All Items" />
+                            <p>All Items</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Appetizers" />
+                            <p>Appetizers</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Burgers" />
+                            <p>Flame Grill Burgers</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Veggie Burgers" />
+                            <p>Veggie Burgers</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Sandwiches" />
+                            <p>Sandwiches</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Chicken" />
+                            <p>Chicken Entrees</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Beef" />
+                            <p>Beef Entrees</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Seafood" />
+                            <p>Seafood Entrees</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Salads" />
+                            <p>House Special Salads</p>
+                        </div>
+                        <div class="menu-item" onclick="setActive(this)">
+                            <img src="/assets/images/all-category.png" alt="Soup" />
+                            <p>Zoop Soup</p>
+                        </div>
+                    </div>
+                    <button class="scroll-btn right-arrow" onclick="scrollMenu(1)">&#10095;</button>
+                </div>
+
+                <div class="menu-container pos-items">
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items-card">
+                        <div class="item-image">
+                            <img src="/assets/images/chicken_dumplings-thumb.png" alt="Chicken Dumplings" />
+                        </div>
+                        <div class="item-info">
+                            <h6>Chicken Dumplings</h6>
+                            <div class="buttons">
+                                <span class="price">2.50F</span>
+                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="pop-right">
+                <div class="first">
+                    <select class="form-select">
+                        <option>Search Customer</option>
+                        <option>John Doe</option>
+                        <option>Walking Customer</option>
+                        <option>Will Smith</option>
+                        <option>Kiron Khan</option>
+                        <option>Farha Israt</option>
+                        <option>Rohim Miya</option>
+                        <option>Sakib Duronto</option>
+                        <option>Maruf Khan</option>
+                    </select>
+                    <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add</a>
+                </div>
+                <div class="token">
+                    <input type="text" name="" id="" placeholder="Token No">
+                </div>
+                <div class="order">
+                    <div class="order-container">
+                        <label class="order-label">Select Order Type</label>
+                        <div class="order-type">
+                            <label class="order-option">
+                                <input type="radio" name="order" checked>
+                                <span>Dine-In</span>
+                            </label>
+                            <label class="order-option">
+                                <input type="radio" name="order">
+                                <span>Takeaway</span>
+                            </label>
+                        </div>
+                        <select class="select-table form-select">
+                            <option>Select Table</option>
+                            <option>Table 1</option>
+                            <option>Table 2</option>
+                            <option>Table 3</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="invoice">
+                    <table class="invoice-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Qty</th>
+                                <th class="items-price">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="items-name">Sub Total</td>
+                                <td></td>
+                                <td class="items-price">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="items-name">Discount</td>
+                                <td></td>
+                                <td class="items-price">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="items-name"><strong>Total</strong></td>
+                                <td></td>
+                                <td class="items-price"><strong>$0.00</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+
+<!-- -------------- card scrolling -------------- -->
+<script>
+    const menu = document.getElementById("menu");
+    const leftArrow = document.querySelector(".left-arrow");
+    const rightArrow = document.querySelector(".right-arrow");
+
+    function updateArrows() {
+        if (menu.scrollLeft > 0) {
+            leftArrow.style.display = "block";
+        } else {
+            leftArrow.style.display = "none";
+        }
+
+        if (menu.scrollLeft + menu.clientWidth >= menu.scrollWidth) {
+            rightArrow.style.display = "none";
+        } else {
+            rightArrow.style.display = "block";
+        }
+    }
+
+    function scrollMenu(direction) {
+        const scrollAmount = 200;
+        menu.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+        setTimeout(updateArrows, 500);
+    }
+
+    function setActive(element) {
+        document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
+        element.classList.add("active");
+    }
+
+    menu.addEventListener("scroll", updateArrows);
+</script>
+
+<!-- ----------- card scrolling end ----------- -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar"),
+            content = document.getElementById("content"),
+            toggleButton = document.getElementById("toggleSidebar"),
+            icon = toggleButton.querySelector("i"),
+            links = document.querySelectorAll(".sidebar ul li a");
+
+        // Load sidebar state
+        if (localStorage.getItem("sidebar-collapsed") === "true") {
+            sidebar.classList.add("collapsed");
+            content.classList.add("collapsed");
+            icon.classList.add("rotate");
+        }
+
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+            content.classList.toggle("collapsed");
+            icon.classList.toggle("rotate");
+            localStorage.setItem("sidebar-collapsed", sidebar.classList.contains("collapsed"));
+        });
+
+        // Active link management
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                links.forEach(l => l.classList.remove("active"));
+                link.classList.add("active");
+                localStorage.setItem("activeLink", link.getAttribute("href"));
+            });
+        });
+    });
+</script>
+
+<!-- --------- navigation -----------/ -->
+<script>
+    function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+
+</html>
