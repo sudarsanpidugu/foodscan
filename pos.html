@@ -76,7 +76,7 @@
 
             <li class="sidebar-heading">POS & ORDERS</li>
             <li><a href="/pos.html"><i class="fas fa-desktop"></i> <span>POS</span></a></li>
-            <li><a href="#"><i class="fas fa-receipt"></i> <span>POS Orders</span></a></li>
+            <li><a href="/recipt.html"><i class="fas fa-receipt"></i> <span>POS Orders</span></a></li>
             <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Table Orders</span></a></li>
 
             <li class="sidebar-heading">PROMO</li>
@@ -352,24 +352,24 @@
                                 <td class="items-price">$2.50</td>
                             </tr>
                             <tr>
-                                <td colspan="3" >
-                                    <tr>
-                                        <td colspan="3">
-                                            <div style="display: flex; gap: 3px; align-items: center;">
-                                                <select class="select-table form-select">
-                                                    <option>Select Table</option>
-                                                    <option>Table 1</option>
-                                                    <option>Table 2</option>
-                                                    <option>Table 3</option>
-                                                </select>
-                                                <input type="text" placeholder="Add Discount" class="form-control">
-                                                <button class="btn">Apply</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    
+                                <td colspan="3">
+                            <tr>
+                                <td colspan="3">
+                                    <div style="display: flex; gap: 3px; align-items: center;">
+                                        <select class="select-table form-select">
+                                            <option>Select Table</option>
+                                            <option>Table 1</option>
+                                            <option>Table 2</option>
+                                            <option>Table 3</option>
+                                        </select>
+                                        <input type="text" placeholder="Add Discount" class="form-control">
+                                        <button class="btn">Apply</button>
+                                    </div>
                                 </td>
-                                
+                            </tr>
+
+                            </td>
+
                             </tr>
                             <tr>
                                 <td class="items-name">Sub Total</td>
@@ -390,7 +390,7 @@
                     </table>
                     <div class="buttons w-100 d-flex gap-4 px-2 py-4">
                         <a href="#" class="btn ">Cancel</a>
-                        <a href="#" class="btn order">Order</a>
+                        <a href="#" class="btn order" id="openpayment">Order</a>
                     </div>
                 </div>
 
@@ -405,7 +405,7 @@
             <div class="popup-add-customer">
                 <div class="header">
                     <h5>Customers</h5>
-                    <span class="close closePopup">&times;</span>
+                    <span class="close closePopup"><i class="bi bi-x-circle text-danger"></i></span>
                 </div>
                 <form>
                     <div class="form-group">
@@ -465,7 +465,7 @@
                             <p class="price">₹2.50</p>
                         </div>
                     </div>
-                    <span- class="close"><i class="bi bi-x-circle"></i></span>
+                    <span- class="close"><i class="bi bi-x-circle text-danger"></i></span>
                 </div>
                 <div class="quantity">
                     <h6>Quantity: <i class="bi bi-plus-circle"></i> <span>1</span> <i class="bi bi-dash-circle"></i>
@@ -524,33 +524,95 @@
         </div>
 
         <!-- Popup Modal for Addon -->
-        <div class="popup" id="addonPopup">
-            <div class="popup-content">
+        <div class="payment-modal" id="payment">
+            <div class="order">
                 <div class="header">
-                    <h5>Addons</h5>
-                    <span class="close closePopup">&times;</span>
+                    <h5>Customers</h5>
+                    <span class="close"><i class="bi bi-x-circle text-danger"></i></span>
                 </div>
-                <form>
-                    <div class="form-group">
-                        <div class="form-group full-width">
-                            <label>Addon Item *</label>
-                            <select class="form-select">
-                                <option>--</option>
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                            </select>
-                        </div>
+                <div class="totalamount">
+                    <p>Total Amount</p>
+                    <div class="amount">$2.25</div>
+                </div>
+                <div class="cards">
+                    <h5>Select Payment Method</h5>
+                    <div class="payment-methods">
+                        <button><i class="bi bi-cash-coin"></i>Cash</button>
+                        <button><i class="bi bi-credit-card-fill"></i>Card</button>
+                        <button><i class="bi bi-tablet-fill"></i>MFS</button>
+                        <button><i class="bi bi-bookmarks-fill"></i>Other</button>
                     </div>
+                </div>
+                <div class="inputbox">
+                    <h5>Enter Received Amount</h5>
+                    <input type="text" style="width: 100%; padding: 13px ; margin-bottom: 10px;">
+                </div>
+                <div class="keypad-container">
+                    <div class="keypad">
+                        <button>1</button> <button>2</button> <button>3</button>
+                        <button>4</button> <button>5</button> <button>6</button>
+                        <button>7</button> <button>8</button> <button>9</button>
+                        <button>00</button> <button>0</button> <button>.</button>
+                    </div>
+                    <div class="side-buttons">
+                        <button><i class="bi bi-backspace-fill"></i></button>
+                        <button>Clear</button>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="confirm" id="openreceipt">Confirm & Print Receipt</button>
 
-                    <div class="col-md-12 my-4 d-flex align-items-center justify-content-end buttons">
-                        <button type="reset" class="btn btn-outline-secondary closePopup">
-                            <i class="bi bi-x-circle-fill"></i> Close
-                        </button>
-                        <button type="submit" class="btn btn-primary ms-2">
-                            <i class="bi bi-check-circle-fill"></i> Save
-                        </button>
-                    </div>
-                </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="receiptpopup" id="receipt">
+            <div class="receipt">
+                <div class="btn-container">
+                    <button class="btn btn-close"><i class="fas fa-close"></i> Close</button>
+                    <button class="btn btn-print"><i class="fas fa-print"></i> Print Invoice</button>
+                </div>
+                <div class="header mt-2">
+                    <p>FoodScan - QrCode Restaurant Menu Maker and Contactless Menu Ordering system</p>
+                    <p class="address">House : 25, Road No: 2, Block A, Mirpur-1, Dhaka 1216<br>Tel: +536464646464
+                    </p>
+                </div>
+                <div class="order-info">
+                    <p><strong>Order #1603256</strong><br>16-03-2025 07:47 PM</p>
+                </div>
+                <div class="items">
+                    <table class="table">
+                        <tr>
+                            <th>Qty</th>
+                            <th>Item Description</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Chicken Dumplings<br><small>Size: Regular - 8 pcs</small></td>
+                            <td>₹2.38</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>VAT (5.00%)</td>
+                            <td>₹0.12</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="totals">
+                    <p>Discount: <span class="float-end">₹0.00</span></p>
+                    <p><strong>Total: <span class="float-end">₹2.50</span></strong></p>
+                </div>
+                <div class="order-info">
+                    <p>Order Type: Takeaway<br>Payment Type: Cash</p>
+                </div>
+                <div class="token">Token #1234</div>
+                <div class="footer text-center mt-2">
+                    <p>Thank You<br>Please Come Again</p>
+                    <p class="text-muted">Powered by FoodScan - QrCode Restaurant Menu Maker and Contactless Menu
+                        Ordering system</p>
+                </div>
             </div>
         </div>
     </section>
@@ -585,9 +647,14 @@
         openPopup("additems");
     });
 
-    document.getElementById("openPopupAddon").addEventListener("click", function (event) {
+    document.getElementById("openpayment").addEventListener("click", function (event) {
         event.preventDefault();
-        openPopup("addonPopup");
+        openPopup("payment");
+    });
+
+    document.getElementById("openreceipt").addEventListener("click", function (event) {
+        event.preventDefault();
+        openPopup("receipt");
     });
 
     // Event listeners for closing popups
