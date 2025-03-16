@@ -117,8 +117,7 @@
                     <a class="nav-link" data-bs-toggle="tab" href="#images"><i class="bi bi-image"></i> Images</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#variation"><i class="bi bi-grid-fill"></i>
-                        Variation</a>
+                    <a class="nav-link" data-bs-toggle="tab" href="#variation"><i class="bi bi-grid-fill"></i> Variation</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="tab" href="#extra"> <i class="bi bi-link-45deg"></i> Extra</a>
@@ -155,133 +154,136 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="variation">
-                    <a href="#" class="btn btn-primary" id="openPopup"><i class="bi bi-plus-circle"></i> Add Variation</a>
+                    <a href="#" class="btn btn-primary" id="openPopup"><i class="bi bi-plus-circle"></i> Add
+                        Variation</a>
                 </div>
                 <div class="tab-pane fade" id="extra">
-                    <a href="#" class="btn btn-primary" id="openPopupExtra"><i class="bi bi-plus-circle"></i> Add Extra</a>
+                    <a href="#" class="btn btn-primary" id="openPopupExtra"><i class="bi bi-plus-circle"></i> Add
+                        Extra</a>
 
                 </div>
                 <div class="tab-pane fade" id="addon">
-                    <a href="#" class="btn btn-primary" id="openPopupAddon"><i class="bi bi-plus-circle"></i> Add Addon</a>
+                    <a href="#" class="btn btn-primary" id="openPopupAddon"><i class="bi bi-plus-circle"></i> Add
+                        Addon</a>
                 </div>
             </div>
         </div>
     </section>
 
 
- <!-- Popup Modal for Variation -->
-<div class="popup" id="variationPopup">
-    <div class="popup-content">
-        <div class="header">
-            <h5>Variations</h5>
-            <span class="close closePopup">&times;</span>
-        </div>
-        <form>
-            <div class="form-group">
-                <label>Name *</label>
-                <input type="text" required>
+    <!-- Popup Modal for Variation -->
+    <div class="popup" id="variationPopup">
+        <div class="popup-content">
+            <div class="header">
+                <h5>Variations</h5>
+                <span class="close closePopup">&times;</span>
             </div>
-            <div class="form-group">
-                <label>Additional Price *</label>
-                <input type="number" required>
-            </div>
-            <div class="form-group">
-                <label>Attribute</label>
-                <select class="form-select">
-                    <option>--</option>
-                    <option>Size</option>
-                    <option>Color</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Status *</label>
-                <div class="radio-group">
-                    <input type="radio" name="status" checked> Active
-                    <input type="radio" name="status"> Inactive
+            <form>
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" required>
                 </div>
-            </div>
-            <div class="form-group full-width">
-                <label>Caution</label>
-                <textarea></textarea>
-            </div>
-            <div class="col-md-12 my-4 d-flex align-items-center justify-content-end buttons">
-                <button type="reset" class="btn btn-outline-secondary closePopup">
-                    <i class="bi bi-x-circle-fill"></i> Close
-                </button>
-                <button type="submit" class="btn btn-primary ms-2">
-                    <i class="bi bi-check-circle-fill"></i> Save
-                </button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label>Additional Price *</label>
+                    <input type="number" required>
+                </div>
+                <div class="form-group">
+                    <label>Attribute</label>
+                    <select class="form-select">
+                        <option>--</option>
+                        <option>Size</option>
+                        <option>Color</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Status *</label>
+                    <div class="radio-group">
+                        <input type="radio" name="status" checked> Active
+                        <input type="radio" name="status"> Inactive
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label>Caution</label>
+                    <textarea></textarea>
+                </div>
+                <div class="col-md-12 my-4 d-flex align-items-center justify-content-end buttons">
+                    <button type="reset" class="btn btn-outline-secondary closePopup">
+                        <i class="bi bi-x-circle-fill"></i> Close
+                    </button>
+                    <button type="submit" class="btn btn-primary ms-2">
+                        <i class="bi bi-check-circle-fill"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
 
     <!-- Popup Modal for Extra -->
-<div class="popup" id="extraPopup">
-    <div class="popup-content">
-        <div class="header">
-            <h5>Extras</h5>
-            <span class="close closePopup">&times;</span>
-        </div>
-        <form>
-            <div class="form-group">
-                <label>Name *</label>
-                <input type="text" required />
+    <div class="popup" id="extraPopup">
+        <div class="popup-content">
+            <div class="header">
+                <h5>Extras</h5>
+                <span class="close closePopup">&times;</span>
             </div>
-            <div class="form-group">
-                <label>Additional Price *</label>
-                <input type="number" required />
-            </div>
-            <div class="form-group ">
-                <label>Status *</label>
-                <div class="radio-group">
-                    <input type="radio" name="status" checked /> Active
-                    <input type="radio" name="status" /> Inactive
+            <form>
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" required />
                 </div>
-            </div>
-            <div class="col-md-12 my-4 d-flex align-items-center justify-content-end buttons">
-                <button type="reset" class="btn btn-outline-secondary closePopup">
-                    <i class="bi bi-x-circle-fill"></i> Close
-                </button>
-                <button type="submit" class="btn btn-primary ms-2">
-                    <i class="bi bi-check-circle-fill"></i> Save
-                </button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label>Additional Price *</label>
+                    <input type="number" required />
+                </div>
+                <div class="form-group ">
+                    <label>Status *</label>
+                    <div class="radio-group">
+                        <input type="radio" name="status" checked /> Active
+                        <input type="radio" name="status" /> Inactive
+                    </div>
+                </div>
+                <div class="col-md-12 my-4 d-flex align-items-center justify-content-end buttons">
+                    <button type="reset" class="btn btn-outline-secondary closePopup">
+                        <i class="bi bi-x-circle-fill"></i> Close
+                    </button>
+                    <button type="submit" class="btn btn-primary ms-2">
+                        <i class="bi bi-check-circle-fill"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<!-- Popup Modal for Addon -->
-<div class="popup" id="addonPopup">
-    <div class="popup-content">
-        <div class="header">
-            <h5>Addons</h5>
-            <span class="close closePopup">&times;</span>
-        </div>
-        <form>
-            <div class="form-group">
-                <div class="form-group full-width">
-                    <label>Addon Item *</label>
-                    <select class="form-select">
-                        <option>--</option>
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                    </select>
+    <!-- Popup Modal for Addon -->
+    <div class="popup" id="addonPopup">
+        <div class="popup-content">
+            <div class="header">
+                <h5>Addons</h5>
+                <span class="close closePopup">&times;</span>
+            </div>
+            <form>
+                <div class="form-group">
+                    <div class="form-group full-width">
+                        <label>Addon Item *</label>
+                        <select class="form-select">
+                            <option>--</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="col-md-12 my-4 d-flex align-items-center justify-content-end buttons">
-                <button type="reset" class="btn btn-outline-secondary closePopup">
-                    <i class="bi bi-x-circle-fill"></i> Close
-                </button>
-                <button type="submit" class="btn btn-primary ms-2">
-                    <i class="bi bi-check-circle-fill"></i> Save
-                </button>
-            </div>
-        </form>
+
+                <div class="col-md-12 my-4 d-flex align-items-center justify-content-end buttons">
+                    <button type="reset" class="btn btn-outline-secondary closePopup">
+                        <i class="bi bi-x-circle-fill"></i> Close
+                    </button>
+                    <button type="submit" class="btn btn-primary ms-2">
+                        <i class="bi bi-check-circle-fill"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
 </body>
 
@@ -303,17 +305,17 @@
     }
 
     // Event listeners for opening popups
-    document.getElementById("openPopup").addEventListener("click", function(event) {
+    document.getElementById("openPopup").addEventListener("click", function (event) {
         event.preventDefault();
         openPopup("variationPopup");
     });
 
-    document.getElementById("openPopupExtra").addEventListener("click", function(event) {
+    document.getElementById("openPopupExtra").addEventListener("click", function (event) {
         event.preventDefault();
         openPopup("extraPopup");
     });
 
-    document.getElementById("openPopupAddon").addEventListener("click", function(event) {
+    document.getElementById("openPopupAddon").addEventListener("click", function (event) {
         event.preventDefault();
         openPopup("addonPopup");
     });

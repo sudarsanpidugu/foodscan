@@ -166,7 +166,7 @@
                             <h6>Chicken Dumplings</h6>
                             <div class="buttons">
                                 <span class="price">2.50F</span>
-                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                                <a href="#" class="add-button" id="openadditems"><i class="bi bi-cart4"></i> Add</a>
                             </div>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
                             <h6>Chicken Dumplings</h6>
                             <div class="buttons">
                                 <span class="price">2.50F</span>
-                                <a href="#" class="add-button"><i class="bi bi-cart4"></i> Add</a>
+                                <a href="#" class="add-button" openadditems><i class="bi bi-cart4"></i> Add</a>
                             </div>
                         </div>
                     </div>
@@ -299,7 +299,7 @@
                         <option>Sakib Duronto</option>
                         <option>Maruf Khan</option>
                     </select>
-                    <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add</a>
+                    <a href="#" class="btn btn-primary" id="openaddcustomer"><i class="bi bi-plus-circle"></i> Add</a>
                 </div>
                 <div class="token">
                     <input type="text" name="" id="" placeholder="Token No">
@@ -331,12 +331,46 @@
                     <table class="invoice-table">
                         <thead>
                             <tr>
-                                <th>Item</th>
+                                <th class="item">Item</th>
                                 <th>Qty</th>
                                 <th class="items-price">Price</th>
                             </tr>
                         </thead>
+
                         <tbody>
+                            <tr class="border-bottom">
+                                <td class="itemname">
+                                    <span class="me-2"><i class="bi bi-trash text-danger"></i></span>
+                                    <p>Chicken Dumplings <br />
+                                        <span>Size: Regual - 8 Pcs.</span>
+                                    </p>
+                                </td>
+                                <td>
+                                    <h6><i class="bi bi-plus-circle"></i> <span>1</span> <i
+                                            class="bi bi-dash-circle "></i>
+                                </td>
+                                <td class="items-price">$2.50</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" >
+                                    <tr>
+                                        <td colspan="3">
+                                            <div style="display: flex; gap: 3px; align-items: center;">
+                                                <select class="select-table form-select">
+                                                    <option>Select Table</option>
+                                                    <option>Table 1</option>
+                                                    <option>Table 2</option>
+                                                    <option>Table 3</option>
+                                                </select>
+                                                <input type="text" placeholder="Add Discount" class="form-control">
+                                                <button class="btn">Apply</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                </td>
+                                
+                            </tr>
                             <tr>
                                 <td class="items-name">Sub Total</td>
                                 <td></td>
@@ -354,6 +388,10 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="buttons w-100 d-flex gap-4 px-2 py-4">
+                        <a href="#" class="btn ">Cancel</a>
+                        <a href="#" class="btn order">Order</a>
+                    </div>
                 </div>
 
 
@@ -362,11 +400,210 @@
             </div>
         </div>
 
-    </section>
 
+        <div class="add-customer  " id="addcustomer">
+            <div class="popup-add-customer">
+                <div class="header">
+                    <h5>Customers</h5>
+                    <span class="close closePopup">&times;</span>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label>Name *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Emaile *</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Status *</label>
+                        <div class="radio-group">
+                            <div class="d-flex me-3"><input type="radio" name="status" checked> <span
+                                    class="mx-2">Active</span></div>
+                            <div class="d-flex"><input type="radio" name="status"> <span class="mx-2">Inactive</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password *</label>
+                        <input type="password">
+                    </div>
+                    <div class="form-group">
+                        <label>Conform Password *</label>
+                        <input type="password">
+                    </div>
+
+                    <div class="col-md-12 mt-3 d-flex align-items-center  buttons">
+                        <button type="submit" class="btn btn-primary me-2">
+                            <i class="bi bi-check-circle-fill"></i> Save
+                        </button>
+                        <button type="reset" class="btn btn-outline-secondary closePopup">
+                            <i class="bi bi-x-circle-fill"></i> Close
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Popup Modal for Extra -->
+        <div class="add-items" id="additems">
+            <div class="popup-additems">
+                <div class="items-header">
+                    <div class="left">
+                        <img src="/assets/images/chicken_dumplings-thumb.png" alt="">
+                        <div class="itemname">
+                            <h6>Chicken Dumplings <i class="bi bi-exclamation-circle-fill text-secondary fs-6"></i></h6>
+                            <p>With a side of fried rice or supreme soy noodles, and steamed chinese greens with oyster
+                                sauce</p>
+                            <p class="price">₹2.50</p>
+                        </div>
+                    </div>
+                    <span- class="close"><i class="bi bi-x-circle"></i></span>
+                </div>
+                <div class="quantity">
+                    <h6>Quantity: <i class="bi bi-plus-circle"></i> <span>1</span> <i class="bi bi-dash-circle"></i>
+                    </h6>
+                </div>
+                <form>
+                    <div class="form-group ">
+                        <h6>Size</h6>
+                        <div class="d-flex">
+                            <div class="radio-group me-3"><input type="radio" name="status" checked /> <span>Regular - 8
+                                    pcs..</span></div>
+                            <div class="radio-group">
+                                <input type="radio" name="status" /> <span>Big - 12 pcs <br>
+                                    +₹1.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </form>
+
+
+                <div class="addon">
+                    <h6>Addons</h6>
+                    <div class="addons-details">
+                        <img src="/assets/images/chicken_dumplings-thumb.png" alt="">
+                        <div class="addons-itemsdetails">
+                            <div class="addons-itemname">
+                                <p>Soda (can)</p>
+                                <p class="price">₹2.50</p>
+                            </div>
+                            <div class="right">
+                                <span><i class="bi bi-exclamation-circle-fill text-secondary fs-6"></i></span>
+                                <p>
+                                    <i class="bi bi-plus-circle"></i>
+                                    <span>1</span>
+                                    <i class="bi bi-dash-circle"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instruction">
+                    <h6>Special Instructions</h6>
+                    <textarea name="" id="" rows="10" placeholder="Add note (extra mayo, cheese, etc.)"></textarea>
+                </div>
+
+                <div class="add-cart">
+                    <button type="submit" class="btn btn-primary">
+                        Add to Cart - <span>$2.50</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup Modal for Addon -->
+        <div class="popup" id="addonPopup">
+            <div class="popup-content">
+                <div class="header">
+                    <h5>Addons</h5>
+                    <span class="close closePopup">&times;</span>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <div class="form-group full-width">
+                            <label>Addon Item *</label>
+                            <select class="form-select">
+                                <option>--</option>
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 my-4 d-flex align-items-center justify-content-end buttons">
+                        <button type="reset" class="btn btn-outline-secondary closePopup">
+                            <i class="bi bi-x-circle-fill"></i> Close
+                        </button>
+                        <button type="submit" class="btn btn-primary ms-2">
+                            <i class="bi bi-check-circle-fill"></i> Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
 </body>
 
+
+<!-- ------ pop veriation ----------- -->
+
+<!-- Script for opening and closing popups -->
+<script>
+    // Function to open a popup
+    function openPopup(popupId) {
+        document.getElementById(popupId).style.display = "flex";
+    }
+
+    // Function to close a popup
+    function closePopup() {
+        document.querySelectorAll(".popup").forEach(popup => {
+            popup.style.display = "none";
+        });
+    }
+
+    // Event listeners for opening popups
+    document.getElementById("openaddcustomer").addEventListener("click", function (event) {
+        event.preventDefault();
+        openPopup("addcustomer");
+    });
+
+    document.getElementById("openadditems").addEventListener("click", function (event) {
+        event.preventDefault();
+        openPopup("additems");
+    });
+
+    document.getElementById("openPopupAddon").addEventListener("click", function (event) {
+        event.preventDefault();
+        openPopup("addonPopup");
+    });
+
+    // Event listeners for closing popups
+    document.querySelectorAll(".closePopup").forEach(button => {
+        button.addEventListener("click", closePopup);
+    });
+</script>
+
+<script>
+    document.getElementById("openForm").addEventListener("click", function () {
+        document.getElementById("formContainer").classList.add("show");
+    });
+    document.getElementById("closeForm").addEventListener("click", function () {
+        document.getElementById("formContainer").classList.remove("show");
+    });
+</script>
 
 <!-- -------------- card scrolling -------------- -->
 <script>
