@@ -720,6 +720,85 @@
     }
 }
 
+
+.view-section {
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+    
+    thead {
+        background-color: #f8f9fa;
+        text-align: left;
+    }
+    
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    td {
+        background-color: #ffffff;
+    }
+    
+    .actions {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .tooltip-container {
+        position: relative;
+        text-decoration: none;
+    }
+    
+    .tooltip-container i {
+        font-size: 18px;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+    
+    .tooltip-container .fa-edit {
+        color: #28a745;
+        background: #e8f5e9;
+    }
+    
+    .tooltip-container .fa-trash {
+        color: #dc3545;
+        background: #fdecea;
+    }
+    
+    .tooltip-container .tooltip-text {
+        visibility: hidden;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+    
+    .tooltip-container:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+}
+
+
 .collapsed+.view-section {
     margin-left: 60px;
 }
