@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodscan</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+
+
+            <a class="navbar-brand fw-bold px-2" href="#"><img src="/assets/images/logo.png" alt="" width="180px"></a>
+            <a class="btn btn-primary me-3" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </a>
+            <div class="d-flex ms-auto align-items-center">
+
+                <button class="btn btn-light me-2">
+                    <i class="fas fa-store"></i> Mirpur-1 (Main)
+                </button>
+
+                <button class="btn btn-outline-primary me-2">
+                    <i class="fas fa-globe"></i> English
+                </button>
+
+
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="profileDropdown"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/profile.png" width="35px" class="rounded me-2" alt=""> Sudarsan
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
+                        <li class="text-center">
+                            <img src="/assets/images/profile.png" alt="User Profile">
+                            <h6>Sudarsan</h6>
+                            <p>sudarasn2165@gmail.com<br>+91 8464002165</p>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user-edit me-2"></i> Edit Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-key me-2"></i> Change Password</a></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>
+                                Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="/index.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+            <li><a href="/items.html"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
+            <li><a href="#"><i class="fas fa-table"></i> <span>Dining Tables</span></a></li>
+
+            <li class="sidebar-heading">POS & ORDERS</li>
+            <li><a href="#"><i class="fas fa-desktop"></i> <span>POS</span></a></li>
+            <li><a href="#"><i class="fas fa-receipt"></i> <span>POS Orders</span></a></li>
+            <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Table Orders</span></a></li>
+
+            <li class="sidebar-heading">PROMO</li>
+            <li><a href="#"><i class="fas fa-tags"></i> <span>Offers</span></a></li>
+
+            <li class="sidebar-heading">USERS</li>
+            <li><a href="#"><i class="fas fa-user-shield"></i> <span>Administrators</span></a></li>
+            <li><a href="#"><i class="fas fa-users"></i> <span>Customers</span></a></li>
+            <li><a href="#"><i class="fas fa-user-tie"></i> <span>Employees</span></a></li>
+
+            <li class="sidebar-heading">ACCOUNTS</li>
+            <li><a href="#"><i class="fas fa-wallet"></i> <span>Transactions</span></a></li>
+
+            <li class="sidebar-heading">REPORTS</li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> <span>Sales Report</span></a></li>
+            <li><a href="#"><i class="fas fa-box"></i> <span>Items Report</span></a></li>
+            <li><a href="#"><i class="fas fa-credit-card"></i> <span>Credit Balance Report</span></a></li>
+
+            <li class="sidebar-heading">SETUP</li>
+            <li><a href="#"><i class="fas fa-cogs"></i> <span>Settings</span></a></li>
+        </ul>
+    </div>
+
+
+
+    <section class="Items">
+        <div class="header">
+            Dashboard / <span class="text-secondary">POS Orders</span>
+        </div>
+
+        <div class="dashboard-items">
+
+            <div class="top-bar">
+                <h5 class="card-title">POS Orders</h5>
+                <div class="buttons d-flex gap-2">
+                   
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="collapse"
+                            data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+                            <i class="bi bi-funnel"></i> Filter
+                        </button>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
+                            data-bs-display="static" aria-expanded="false">
+                            <i class="fa fa-file-export"></i> Export
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-printer"></i> Print</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-filetype-xls"></i> XLS</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+           
+
+
+            <!-- Collapsible Filter Form in Next Row -->
+            <div class="collapse mt-3" id="filterCollapse">
+                <div class="filter-container">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="name">ORDER ID</label>
+                                <input type="text" class="form-control custom-input" id="name" placeholder="Enter name">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="price">STATUS</label>
+                                <select class="form-select custom-select" id="category">
+                                <option>--</option>
+                                <option>Electronics</option>
+                                <option>Fashion</option>
+                            </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="category">CUSTOMER</label>
+                                <select class="form-select custom-select" id="category">
+                                    <option>--</option>
+                                    <option>Electronics</option>
+                                    <option>Fashion</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="tax">DATE</label>
+                                <input type="text" class="form-control custom-input" id="date" placeholder="Enter Date">
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-12 my-4 d-flex align-items-end">
+                                <button type="submit" class="btn btn-search me-2">
+                                    <i class="bi bi-search"></i> Search
+                                </button>
+                                <button type="reset" class="btn btn-clear">
+                                    <i class="bi bi-x-circle"></i> Clear
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ORDER ID</th>
+                        <th>ORDER TYPE</th>
+                        <th>Customer</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0603255</td>
+                        <td><span class="text-danger">Dining Table</span></td>
+                        <td>Will Smith</td>
+                        <td>8.50</td>
+                        <td>09:41 AM, 09-03-2025</td>
+                        <td><span class="status">Preparing</span></td>
+                        <td class="actions">
+                            <a href="posorderview.html" class="tooltip-container">
+                                <i class="fas fa-eye view"></i>
+                                <span class="tooltip-text">View</span>
+                            </a>
+                           <a class="tooltip-container">
+                                <i class="fas fa-trash delete"></i>
+                                <span class="tooltip-text">Delete</span>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>0603255</td>
+                        <td><span class="text-danger">Dining Table</span></td>
+                        <td>Will Smith</td>
+                        <td>8.50</td>
+                        <td>09:41 AM, 09-03-2025</td>
+                        <td><span class="status">Preparing</span></td>
+                        <td class="actions">
+                            <a href="/posorderview.html" class="tooltip-container">
+                                <i class="fas fa-eye view"></i>
+                                <span class="tooltip-text">View</span>
+                            </a>
+                           <a class="tooltip-container">
+                                <i class="fas fa-trash delete"></i>
+                                <span class="tooltip-text">Delete</span>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>0603255</td>
+                        <td><span class="text-danger">Dining Table</span></td>
+                        <td>Will Smith</td>
+                        <td>8.50</td>
+                        <td>09:41 AM, 09-03-2025</td>
+                        <td><span class="status">Preparing</span></td>
+                        <td class="actions">
+                            <a href="/view.html" class="tooltip-container">
+                                <i class="fas fa-eye view"></i>
+                                <span class="tooltip-text">View</span>
+                            </a>
+                           <a class="tooltip-container">
+                                <i class="fas fa-trash delete"></i>
+                                <span class="tooltip-text">Delete</span>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                   
+                </tbody>
+            </table>
+           
+        </div>
+    </section>
+
+</body>
+
+
+<!-- ----------------- add items script------------- -->
+<script>
+    document.getElementById("openForm").addEventListener("click", function () {
+        document.getElementById("formContainer").classList.add("show");
+    });
+    document.getElementById("closeForm").addEventListener("click", function () {
+        document.getElementById("formContainer").classList.remove("show");
+    });
+</script>
+<!-- ----------------- add items end------------- -->
+
+
+<!-- ------------------- sidebar collapse ------------` -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar"),
+            content = document.getElementById("content"),
+            toggleButton = document.getElementById("toggleSidebar"),
+            icon = toggleButton.querySelector("i"),
+            links = document.querySelectorAll(".sidebar ul li a");
+
+        // Load sidebar state
+        if (localStorage.getItem("sidebar-collapsed") === "true") {
+            sidebar.classList.add("collapsed");
+            content.classList.add("collapsed");
+            icon.classList.add("rotate");
+        }
+
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+            content.classList.toggle("collapsed");
+            icon.classList.toggle("rotate");
+            localStorage.setItem("sidebar-collapsed", sidebar.classList.contains("collapsed"));
+        });
+
+        // Active link management
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                links.forEach(l => l.classList.remove("active"));
+                link.classList.add("active");
+                localStorage.setItem("activeLink", link.getAttribute("href"));
+            });
+        });
+    });
+</script>
+
+<!-- ------------------- sidebar collapse ------------` -->
+
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodscan</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+
+
+            <a class="navbar-brand fw-bold px-2" href="#"><img src="/assets/images/logo.png" alt="" width="180px"></a>
+            <a class="btn btn-primary me-3" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </a>
+            <div class="d-flex ms-auto align-items-center">
+
+                <button class="btn btn-light me-2">
+                    <i class="fas fa-store"></i> Mirpur-1 (Main)
+                </button>
+
+                <button class="btn btn-outline-primary me-2">
+                    <i class="fas fa-globe"></i> English
+                </button>
+
+
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="profileDropdown"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/profile.png" width="35px" class="rounded me-2" alt=""> Sudarsan
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
+                        <li class="text-center">
+                            <img src="/assets/images/profile.png" alt="User Profile">
+                            <h6>Sudarsan</h6>
+                            <p>sudarasn2165@gmail.com<br>+91 8464002165</p>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user-edit me-2"></i> Edit Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-key me-2"></i> Change Password</a></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>
+                                Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="/index.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+            <li><a href="/items.html"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
+            <li><a href="#"><i class="fas fa-table"></i> <span>Dining Tables</span></a></li>
+
+            <li class="sidebar-heading">POS & ORDERS</li>
+            <li><a href="#"><i class="fas fa-desktop"></i> <span>POS</span></a></li>
+            <li><a href="#"><i class="fas fa-receipt"></i> <span>POS Orders</span></a></li>
+            <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Table Orders</span></a></li>
+
+            <li class="sidebar-heading">PROMO</li>
+            <li><a href="#"><i class="fas fa-tags"></i> <span>Offers</span></a></li>
+
+            <li class="sidebar-heading">USERS</li>
+            <li><a href="#"><i class="fas fa-user-shield"></i> <span>Administrators</span></a></li>
+            <li><a href="#"><i class="fas fa-users"></i> <span>Customers</span></a></li>
+            <li><a href="#"><i class="fas fa-user-tie"></i> <span>Employees</span></a></li>
+
+            <li class="sidebar-heading">ACCOUNTS</li>
+            <li><a href="#"><i class="fas fa-wallet"></i> <span>Transactions</span></a></li>
+
+            <li class="sidebar-heading">REPORTS</li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> <span>Sales Report</span></a></li>
+            <li><a href="#"><i class="fas fa-box"></i> <span>Items Report</span></a></li>
+            <li><a href="#"><i class="fas fa-credit-card"></i> <span>Credit Balance Report</span></a></li>
+
+            <li class="sidebar-heading">SETUP</li>
+            <li><a href="#"><i class="fas fa-cogs"></i> <span>Settings</span></a></li>
+        </ul>
+    </div>
+
+
+
+    <section class="posorderview">
+        <div class="header">
+            Dashboard /POS Orders /<span class="text-secondary">View</span>
+        </div>
+
+        <div class="dashboard-items">
+
+            <div class="order-header">
+                <div class="orderid">
+                    <h5 class="fs-4 pb-2 align-items-center"><span class="text-secondary">Order ID:</span> #0603255
+                        <span
+                            style="margin-left: 20px; font-size: 14px; color: rgb(3, 138, 3); background: rgba(179, 248, 179, 0.425); padding: 3px 10px; border-radius: 20px;">Paid</span>
+                        <span
+                            style="margin-left: 10px; font-size: 14px; color: rgb(29, 118, 235); background: rgba(179, 215, 248, 0.425); padding: 3px 10px; border-radius: 20px;">Prepared</span>
+                    </h5>
+
+                    <div class="order-details">
+                        <p class="text-secondary"><i class="bi bi-calendar3 me-3"></i><span>09:41 AM, 09-03-2025</span>
+                        </p>
+                        <p><span>Payment Type:</span> Cash</p>
+                        <p><span>Order Type:</span> Daning Table</p>
+                        <p><span>Delivery Time:</span> 09-03-2025 08:30 PM-09:00 PM</p>
+                        <p><span>Token No:</span> #0108</p>
+                        <p><span>Table Name:</span> Table 1</p>
+                    </div>
+
+                </div>
+                <div class="buttons d-flex gap-2">
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
+                            data-bs-display="static" aria-expanded="false">
+                            Paid
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                            <li><a class="dropdown-item" href="#">Paid</a></li>
+                            <li><a class="dropdown-item" href="#">Unpaid</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
+                            data-bs-display="static" aria-expanded="false">
+                            Prepared
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                            <li><a class="dropdown-item" href="#"> Accept</a></li>
+                            <li><a class="dropdown-item" href="#"> Preparing</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="add-item btn btn-primary" id=""><i class="bi bi-printer"></i> Print Invoice</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div class="w-50">
+                <div class="items-img">
+                    <div class="heading">
+                        <h5>Delivery Information</h5>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="left">
+                            <span>1</span><img src="/assets/images/vegan_hum-burger_with_cheese-thumb.png" alt="">
+
+                        </div>
+                        <div class="item-details">
+                            <p><strong>Vegan Hum-Burger With Cheese</strong></p>
+                            <p>Size: Regular</p>
+                            <p><strong>$2.50</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="left">
+                            <span>1</span><img src="/assets/images/vegan_hum-burger_with_cheese-thumb.png" alt="">
+
+                        </div>
+                        <div class="item-details">
+                            <p><strong>Vegan Hum-Burger With Cheese</strong></p>
+                            <p>Size: Regular</p>
+                            <p><strong>$2.50</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="left">
+                            <span>1</span><img src="/assets/images/vegan_hum-burger_with_cheese-thumb.png" alt="">
+
+                        </div>
+                        <div class="item-details">
+                            <p><strong>Vegan Hum-Burger With Cheese</strong></p>
+                            <p>Size: Regular</p>
+                            <p><strong>$2.50</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        <div class="left">
+                            <span>1</span><img src="/assets/images/vegan_hum-burger_with_cheese-thumb.png" alt="">
+
+                        </div>
+                        <div class="item-details">
+                            <p><strong>Vegan Hum-Burger With Cheese</strong></p>
+                            <p>Size: Regular</p>
+                            <p><strong>$2.50</strong></p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="w-50">
+                <div class="amount-details">
+                    <div class="left">
+                        <p>Subtotal</p>
+                        <p>Discount</p>
+                        <p class="mt-4"><strong>Total</strong></p>
+                    </div>
+                    <div class="right">
+                        <p>$8.50</p>
+                        <p>$0.00</p>
+                        <p class="mt-4"><strong>$8.50</strong></p>
+                    </div>
+                </div>
+
+                <div class="delivery-information">
+                    <div class="heading">
+                        <h5>Delivery Information</h5>
+                    </div>
+
+                    <div class="profile">
+                        <img src="/assets/images/profile.png" alt="">
+                        <h6>Will Smith</h6>
+                    </div>
+                    <div class="contact-details">
+                        <p><i class="bi bi-envelope-at-fill"></i> customer@emaple.com</p>
+                        <p><i class="bi bi-telephone"></i> +8801234444455</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+
+<!-- ----------------- add items script------------- -->
+<script>
+    document.getElementById("openForm").addEventListener("click", function () {
+        document.getElementById("formContainer").classList.add("show");
+    });
+    document.getElementById("closeForm").addEventListener("click", function () {
+        document.getElementById("formContainer").classList.remove("show");
+    });
+</script>
+<!-- ----------------- add items end------------- -->
+
+
+<!-- ------------------- sidebar collapse ------------` -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar"),
+            content = document.getElementById("content"),
+            toggleButton = document.getElementById("toggleSidebar"),
+            icon = toggleButton.querySelector("i"),
+            links = document.querySelectorAll(".sidebar ul li a");
+
+        // Load sidebar state
+        if (localStorage.getItem("sidebar-collapsed") === "true") {
+            sidebar.classList.add("collapsed");
+            content.classList.add("collapsed");
+            icon.classList.add("rotate");
+        }
+
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+            content.classList.toggle("collapsed");
+            icon.classList.toggle("rotate");
+            localStorage.setItem("sidebar-collapsed", sidebar.classList.contains("collapsed"));
+        });
+
+        // Active link management
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                links.forEach(l => l.classList.remove("active"));
+                link.classList.add("active");
+                localStorage.setItem("activeLink", link.getAttribute("href"));
+            });
+        });
+    });
+</script>
+
+<!-- ------------------- sidebar collapse ------------` -->
+
+</html>
