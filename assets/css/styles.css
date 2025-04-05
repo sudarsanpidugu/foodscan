@@ -2166,3 +2166,44 @@
         border-bottom: 1px solid #000;
     }
 }
+
+
+.cds {
+    margin-left: 250px;
+    margin-top: 80px;
+    transition: all 0.3s;
+    padding: 20px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(247 247 252 / var(--tw-bg-opacity, 1));
+    height: 100%;
+}
+
+.collapsed+.cds {
+    margin-left: 60px;
+}
+
+.cds {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    .card {
+        width: 40%;
+        height: 100vh;
+        border-radius: 15px;
+        
+        h1 {
+            width: 100%;
+            background: rgb(69, 114, 247);
+            padding: 15px 0;
+            border-top-right-radius: 15px;    
+            border-top-left-radius: 15px;
+            color:#fff;
+            font-size: 20px;
+        }
+    }
+
+    .start h1{
+        background: rgb(35, 174, 35);
+    } 
+}
+
