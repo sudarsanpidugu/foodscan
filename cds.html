@@ -29,9 +29,7 @@
 
 
             <a class="navbar-brand fw-bold px-2" href="#"><img src="/assets/images/logo.png" alt="" width="180px"></a>
-            <a class="btn btn-primary me-3" id="toggleSidebar">
-                <i class="fas fa-bars"></i>
-            </a>
+
             <div class="d-flex ms-auto align-items-center">
 
                 <button class="btn btn-light me-2">
@@ -41,6 +39,10 @@
                 <button class="btn btn-outline-primary me-2">
                     <i class="fas fa-globe"></i> English
                 </button>
+
+                <a href="/index.html" class="btn btn-outline-primary me-2">
+                    <i class="fas fa-th-large"></i> Dashboard
+                </a>
 
 
                 <div class="dropdown">
@@ -68,103 +70,113 @@
         </div>
     </nav>
 
-    <div class="sidebar" id="sidebar">
-        <ul>
-            <li><a href="/index.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
-            <li><a href="/items.html"><i class="fas fa-utensils"></i> <span>Items</span></a></li>
-            <li><a href="#"><i class="fas fa-table"></i> <span>Dining Tables</span></a></li>
+    <section class="kds">
+        <div class="d-flex">
+            <div class="left">
+                <div class="card">
+                    <div class="top"><h3>Items Board</h3></div>
+                    <div class="bottom">
+                        <div>
+                            <p>Vegan Hum-burger with Cheese</p>
+                            <p class="size">Size: Regular</p>
+                        </div>
+                        <p class="count">1</p>
 
-            <li class="sidebar-heading">POS & ORDERS</li>
-            <li><a href="#"><i class="fas fa-desktop"></i> <span>POS</span></a></li>
-            <li><a href="#"><i class="fas fa-receipt"></i> <span>POS Orders</span></a></li>
-            <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Table Orders</span></a></li>
-            <li><a href="/cds.html"> <span>C.D.S</span></a></li>
+                    </div>
 
-            <li class="sidebar-heading">PROMO</li>
-            <li><a href="#"><i class="fas fa-tags"></i> <span>Offers</span></a></li>
-
-            <li class="sidebar-heading">USERS</li>
-            <li><a href="#"><i class="fas fa-user-shield"></i> <span>Administrators</span></a></li>
-            <li><a href="#"><i class="fas fa-users"></i> <span>Customers</span></a></li>
-            <li><a href="#"><i class="fas fa-user-tie"></i> <span>Employees</span></a></li>
-
-            <li class="sidebar-heading">ACCOUNTS</li>
-            <li><a href="#"><i class="fas fa-wallet"></i> <span>Transactions</span></a></li>
-
-            <li class="sidebar-heading">REPORTS</li>
-            <li><a href="#"><i class="fas fa-chart-line"></i> <span>Sales Report</span></a></li>
-            <li><a href="#"><i class="fas fa-box"></i> <span>Items Report</span></a></li>
-            <li><a href="#"><i class="fas fa-credit-card"></i> <span>Credit Balance Report</span></a></li>
-
-            <li class="sidebar-heading">SETUP</li>
-            <li><a href="#"><i class="fas fa-cogs"></i> <span>Settings</span></a></li>
-        </ul>
-    </div>
-
-
-
-    <section class="cds">
-        <div class="preparing card">
-            <h1>Preparing</h1>
-            <h2>20234576</h2>
-
-        </div>
-        <div class="start card">
-            <h1>Ready</h1>
-            <h2>20234576</h2>
-
+                    
+                </div>
+            </div>
+            <div class="right w-100">
+                <div class="top-header d-flex align-items-center gap-2 flex-wrap justify-content-between">
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button class="tab-btn active">All Orders</button>
+                        <button class="tab-btn">Confirmed</button>
+                        <button class="tab-btn">Preparing</button>
+                        <button class="tab-btn">Done</button>
+                    </div>
+                    <div class="search-box">
+                        <i class="bi bi-search text-muted me-2"></i>
+                        <input type="text" placeholder="Search Order">
+                    </div>
+                </div>
+        
+                <div class="container-fluid px-0">
+                    <div class="row g-3">
+                        <!-- Dine-In -->
+                        <div class="col-md-6">
+                            <div class="order-container pb-1">
+                                <div class="section-title">
+                                    <span>
+                                        Dine-In Orders
+                                    </span>
+                                </div>
+        
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <span class="order-id ">
+                                            <i class="bi bi-bag-fill"></i> #0604256
+                                        </span>
+                                        <span class="status-pill">Confirmed</span>
+                                    </div>
+                                    <div class="second-section">
+                                        <div class="order-details">
+                                            <p>Table No:</p>
+                                            <p>Token No: <strong>1234</strong></p>
+                                            <p>04:02 PM, 06-04-2025</p>
+                                        </div>
+                                        <a href="#" class="toggle-collapse"><i class="bi bi-chevron-down"></i></a>
+                                    </div>
+        
+                                    <div class="collapseElement">
+                                        <div class="top">
+                                            <span>1x</span>
+                                            <div class="order-details">
+                                                <p><strong>Fried Cheese wonton</strong></p>
+                                                <p class="size">Size: Regular-8 Pcs</p>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn btn-primary">Start Preparing</a>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="order-container">
+                                <div class="section-title">Takeaway</div>
+                                <!-- No orders yet -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-</body>
 
-
-<!-- ----------------- add items script------------- -->
-<script>
-    document.getElementById("openForm").addEventListener("click", function () {
-        document.getElementById("formContainer").classList.add("show");
-    });
-    document.getElementById("closeForm").addEventListener("click", function () {
-        document.getElementById("formContainer").classList.remove("show");
-    });
-</script>
-<!-- ----------------- add items end------------- -->
-
-
-<!-- ------------------- sidebar collapse ------------` -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const sidebar = document.getElementById("sidebar"),
-            content = document.getElementById("content"),
-            toggleButton = document.getElementById("toggleSidebar"),
-            icon = toggleButton.querySelector("i"),
-            links = document.querySelectorAll(".sidebar ul li a");
-
-        // Load sidebar state
-        if (localStorage.getItem("sidebar-collapsed") === "true") {
-            sidebar.classList.add("collapsed");
-            content.classList.add("collapsed");
-            icon.classList.add("rotate");
-        }
-
-        toggleButton.addEventListener("click", () => {
-            sidebar.classList.toggle("collapsed");
-            content.classList.toggle("collapsed");
-            icon.classList.toggle("rotate");
-            localStorage.setItem("sidebar-collapsed", sidebar.classList.contains("collapsed"));
-        });
-
-        // Active link management
-        links.forEach(link => {
-            link.addEventListener("click", () => {
-                links.forEach(l => l.classList.remove("active"));
-                link.classList.add("active");
-                localStorage.setItem("activeLink", link.getAttribute("href"));
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggles = document.querySelectorAll(".toggle-collapse");
+    
+            toggles.forEach(toggle => {
+                toggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const collapse = this.closest(".order-card").querySelector(".collapseElement");
+                    collapse.classList.toggle("active");
+    
+                    // Optional: Rotate the chevron icon
+                    const icon = this.querySelector("i");
+                    icon.classList.toggle("bi-chevron-down");
+                    icon.classList.toggle("bi-chevron-up");
+                });
             });
         });
-    });
-</script>
+    </script>
+    
 
-<!-- ------------------- sidebar collapse ------------` -->
+</body>
+
 
 </html>
